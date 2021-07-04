@@ -1,0 +1,96 @@
+
+.container{
+    top: 80px;
+    display:grid;
+    grid-template-columns: repeat(6,100px);
+    justify-content: center;
+    align-content: center;
+    grid-gap:150px 100px;
+    position:relative;
+    
+}
+
+.carta{
+    height: 150px;
+    border-radius: 20px;
+}
+
+.tiempo{
+    background-color: #fff;
+    position: relative;
+    height: 100px;
+    width:100px;
+    top:100px;
+    left: 100px;
+    border: 5px groove #000;
+    border-radius: 50px;
+}
+
+.texto{
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    padding: 30px 0px 30px 0px;
+    font-size: small;
+}
+
+@keyframes letras{
+    from{
+        font-size: 40px;
+    }
+    to{
+        font-size: 45px;
+    }
+}
+
+h1{
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    animation-name: letras;
+    animation-duration: 2s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-fill-mode:forwards;
+}
+
+.btn{
+    position:relative;
+    top: 35px;
+    left: 700px;
+}
+
+.but{
+    font-size: 40px;
+    border-radius: 20px;
+    border: 15px double green;
+    background-color: #fff
+
+}
+
+.progress{
+    position:relative;
+    top:100px;
+}
+
+
+
+ .img{
+    object-fit: cover;
+    width: 100%;
+    height:100%;
+ }
+
+ .felicidades{
+     opacity: 1;
+     background-color: transparent;
+     width: 600px;
+    height:600px;
+    font-size: 100px;
+    margin:auto;
+    text-align: center;
+    padding: 90px;
+    color: rgb(17, 152, 206);
+    font-family: cursive;
+ }
+
+ 
+ 
