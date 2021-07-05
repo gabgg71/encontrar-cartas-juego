@@ -1,9 +1,9 @@
-let colores =["https://github.com/gabgg71/Encontrar-cartas-juego/blob/78c8a7a99e0ad8c20bfc5322fe748c91d5868e18/gato1.jpg?raw=true", 
-            "https://github.com/gabgg71/Encontrar-cartas-juego/blob/78c8a7a99e0ad8c20bfc5322fe748c91d5868e18/gato2.jpg?raw=true",
-            "https://github.com/gabgg71/Encontrar-cartas-juego/blob/78c8a7a99e0ad8c20bfc5322fe748c91d5868e18/gato3.jpg?raw=true",
-            "https://github.com/gabgg71/Encontrar-cartas-juego/blob/78c8a7a99e0ad8c20bfc5322fe748c91d5868e18/gato4.jpg?raw=true", 
-            "https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/78c8a7a99e0ad8c20bfc5322fe748c91d5868e18/gato5.jpg",
-            "https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/78c8a7a99e0ad8c20bfc5322fe748c91d5868e18/gato6.jpg"
+let colores =["https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/gato1.jpg", 
+            "https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/gato2.jpg",
+            "https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/gato3.jpg",
+            "https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/gato4.jpg", 
+            "https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/gato5.jpg",
+            "https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/gato6.jpg"
         ];
 let cartas = document.querySelectorAll(".carta");
 let barra = document.querySelector('.progress-bar');
@@ -37,7 +37,7 @@ const asignarColores = () => {
 const init = () => {
     let contador = 0;
     while (contador < 12) {
-        cartas[contador].innerHTML = '<img class = "img img-fluid style= "height:150px;" src="https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/78c8a7a99e0ad8c20bfc5322fe748c91d5868e18/carta.jpg" alt=""></img>'
+        cartas[contador].innerHTML = '<img class = "img img-fluid style= "height:150px;" src="https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/carta.jpg" alt=""></img>'
         cartas[contador].classList.add("false");
         contador++;
     }
@@ -112,14 +112,14 @@ const darVuelta = (tiempo) => {
         setTimeout(() => {
             cartas.forEach(c => {
                 elClone = c.cloneNode(true);
-                elClone.innerHTML = '<img class = "img img-fluid style= "height:150px;" src="https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/78c8a7a99e0ad8c20bfc5322fe748c91d5868e18/carta.jpg" alt=""></img>'
+                elClone.innerHTML = '<img class = "img img-fluid style= "height:150px;" src="https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/carta.jpg" alt=""></img>'
                 c.parentNode.replaceChild(elClone, c);
             });
         },1000)  
     }, tiempo+1000);
     for (let j = 0; j < cartas.length; j++) {
         cartas[j].addEventListener("click", (e) => {
-                    if (cartas[j].innerHTML === '<img class="img img-fluid style= " height:150px;"="" src="https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/78c8a7a99e0ad8c20bfc5322fe748c91d5868e18/carta.jpg" alt="">') {
+                    if (cartas[j].innerHTML === '<img class="img img-fluid style= " height:150px;"="" src="https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/carta.jpg" alt="">') {
                         for (let i = 0; i < colores.length; i++) {
                             if (cartas[j].classList.contains(colores[i])) {
                                 cartas[j].classList.replace("false", "true");
@@ -127,7 +127,7 @@ const darVuelta = (tiempo) => {
                                 if (hayMatch(cartas[j], j) == false) {
                                     setTimeout(() => { 
                                         if(hayMatch(cartas[j], j) == false){
-                                            cartas[j].innerHTML = '<img class = "img img-fluid style= "height:150px;" src="https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/78c8a7a99e0ad8c20bfc5322fe748c91d5868e18/carta.jpg" alt=""></img>' 
+                                            cartas[j].innerHTML = '<img class = "img img-fluid style= "height:150px;" src="https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/carta.jpg" alt=""></img>' 
                                         }
                                     }, 3000);
                                     cartas[j].classList.replace("true", "false");
