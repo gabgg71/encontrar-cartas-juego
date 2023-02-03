@@ -1,9 +1,9 @@
-let colores =["https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/gato1.jpg", 
-            "https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/gato2.jpg",
-            "https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/gato3.jpg",
-            "https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/gato4.jpg", 
-            "https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/gato5.jpg",
-            "https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/gato6.jpg"
+let colores =["imagenes/gato1.jpg", 
+            "imagenes/gato2.jpg",
+            "imagenes/gato3.jpg",
+            "imagenes/gato4.jpg", 
+            "imagenes/gato5.jpg",
+            "imagenes/gato6.jpg"
         ];
 let cartas = document.querySelectorAll(".carta");
 let barra = document.querySelector('.progress-bar');
@@ -14,10 +14,9 @@ let match =0;
 let niveles
 let tiempoPrimerNivel = 30000;
 var body = document.getElementsByTagName('body')[0];
-body.style.backgroundImage = 'url(https://wallpapers.org.es/wp-content/uploads/2012/10/wallpapers_sencillos_minimalistas-1024x646.jpeg)';
+body.style.backgroundImage = 'url(imagenes/fondoJuego.jpg)';
 
 const asignarColores = () => {
-    console.log("Posiciones: "+posiciones.length);
     let contador = 0;
     for (let i = 0; i < 12; i++) {
         let aleatorio = Math.floor(Math.random() * (posiciones.length + 1));
@@ -37,7 +36,7 @@ const asignarColores = () => {
 const init = () => {
     let contador = 0;
     while (contador < 12) {
-        cartas[contador].innerHTML = '<img class = "img img-fluid style= "height:150px;" src="https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/carta.jpg" alt=""></img>'
+        cartas[contador].innerHTML = '<img class = "img img-fluid style= "height:150px;" src="imagenes/carta.jpg" alt=""></img>'
         cartas[contador].classList.add("false");
         contador++;
     }
@@ -112,14 +111,14 @@ const darVuelta = (tiempo) => {
         setTimeout(() => {
             cartas.forEach(c => {
                 elClone = c.cloneNode(true);
-                elClone.innerHTML = '<img class = "img img-fluid style= "height:150px;" src="https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/carta.jpg" alt=""></img>'
+                elClone.innerHTML = '<img class = "img img-fluid style= "height:150px;" src="imagenes/carta.jpg" alt=""></img>'
                 c.parentNode.replaceChild(elClone, c);
             });
         },1000)  
     }, tiempo+1000);
     for (let j = 0; j < cartas.length; j++) {
         cartas[j].addEventListener("click", (e) => {
-                    if (cartas[j].innerHTML === '<img class="img img-fluid style= " height:150px;"="" src="https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/carta.jpg" alt="">') {
+                    if (cartas[j].innerHTML === '<img class="img img-fluid style= " height:150px;"="" src="imagenes/carta.jpg" alt="">') {
                         for (let i = 0; i < colores.length; i++) {
                             if (cartas[j].classList.contains(colores[i])) {
                                 cartas[j].classList.replace("false", "true");
@@ -127,7 +126,7 @@ const darVuelta = (tiempo) => {
                                 if (hayMatch(cartas[j], j) == false) {
                                     setTimeout(() => { 
                                         if(hayMatch(cartas[j], j) == false){
-                                            cartas[j].innerHTML = '<img class = "img img-fluid style= "height:150px;" src="https://raw.githubusercontent.com/gabgg71/Encontrar-cartas-juego/main/carta.jpg" alt=""></img>' 
+                                            cartas[j].innerHTML = '<img class = "img img-fluid style= "height:150px;" src="imagenes/carta.jpg" alt=""></img>' 
                                         }
                                     }, 3000);
                                     cartas[j].classList.replace("true", "false");

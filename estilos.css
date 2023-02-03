@@ -1,4 +1,8 @@
 
+body {
+    background-size: cover;
+}
+
 .container{
     top: 80px;
     display:grid;
@@ -53,9 +57,11 @@ h1{
 }
 
 .btn{
-    position:relative;
-    top: 35px;
-    left: 700px;
+    margin: auto;
+    position: absolute;
+    width: 20%;
+    bottom: 10%;
+    right: 40%;
 }
 
 .but{
