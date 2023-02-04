@@ -21,11 +21,11 @@ body {
 
 .tiempo{
     background-color: #fff;
-    position: relative;
-    height: 100px;
-    width:100px;
-    top:100px;
-    left: 100px;
+    position: absolute;
+    height: 10vh;
+    width:10vh;
+    bottom: 4%;
+    margin-left: 5%;
     border: 5px groove #000;
     border-radius: 50px;
 }
@@ -60,7 +60,7 @@ h1{
     margin: auto;
     position: absolute;
     width: 20%;
-    bottom: 10%;
+    bottom: 6%;
     right: 40%;
 }
 
@@ -74,9 +74,12 @@ h1{
 
 .progress{
     position:relative;
-    top:100px;
+    margin-top:10%;
 }
 
+h1{
+    padding-top: 3%;
+}
 
 
  .img{
